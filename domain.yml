@@ -9,6 +9,10 @@ slots:
     type: float
     mappings:
       - type: from_llm
+  final_confirmation:
+    type: bool
+    mappings:
+      - type: from_llm
 
 responses:
   utter_ask_recipient:
@@ -33,3 +37,7 @@ responses:
           {{history}}
           {{current_input}}
           Suggested AI Response:
+  utter_ask_final_confirmation:
+    - text: "Please confirm: you want to transfer {amount} to {recipient}?"
+  utter_transfer_cancelled:
+    - text: "Your transfer has been cancelled."
